@@ -1,22 +1,14 @@
+
+
 <h3>books index</h3>
-
-<h2>User info</h2>
-   <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg" ,format: 'no_image.jpg' %>
-   <h5>name</h5>
-   <%= @user.name %>
-   <h5>introduction</h5>
-   <%= @user.introduction %>
-   <%= link_to"",edit_user_path(@user.id), class: "col-xs-12 btn btn-default glyphicon glyphicon-wrench"%>
-
-
-<h2>New book</h2>
-<%= form_with model: @book, local: true do |f| %>
- <h4>Title</h4>
- <%= f.text_field :title %>
- <h4>Opinion</h4>
- <%= f.text_field :body %>
- <%= f.submit 'Create Book' %>
+<% if @book.errors.any? %>
+<%= @book.errors.count %>件のエラーが発生しました
+<% @book.errors.full_messages.each do |message| %>
+ <li><%= message %></li>
+ <% end %>
 <% end %>
+
+
 
 
 <h2>Books</h2>

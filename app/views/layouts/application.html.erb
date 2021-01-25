@@ -7,11 +7,10 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <p>Bookers</p>
   </head>
 
   <body>
-    <%= link_to "Bookers", "/" %>
+    <a href= "/">Bookers</a>
     <% if user_signed_in? %>
       <li>
         <%= link_to 'Home', user_path(current_user.id) %>
