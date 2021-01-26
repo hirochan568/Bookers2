@@ -1,18 +1,15 @@
 <% if @book.errors.any? %>
-<%= @book.errors.count %>件のエラーが発生しました
+<%= @book.errors.count %>errors have occurred
 <% @book.errors.full_messages.each do |message| %>
  <li><%= message %></li>
  <% end %>
 <% end %>
 
 <div class="container">
-	<div class="row">
-   <%= render 'layouts/list',user: @user,book: @book %>
-
-
-
-
-  	<div class="col-xs-9">
+ <div class="row">
+  	<div class="col-md-3">
+  	 <%= render 'layouts/list',user: @user,book: @book %>
+  	 <div class="col-md-8 offset-md-1">
     <h2>Books</h2>
     <table class="table table-striped">
       <tr>
@@ -31,5 +28,7 @@
        </tr>
          <% end %>
     </table>
+     </div>
+    </div>
   </div>
 </div>
