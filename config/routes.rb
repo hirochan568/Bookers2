@@ -3,5 +3,5 @@ devise_for :users
 resources :users,only:[:show,:edit,:update, :index]
 root 'homes#top'
 resources :books, only: [:create, :index, :show, :edit, :destroy, :update]
-get "homes/about" => "homes#about"
+get "home/about" => "homes#about"
 end

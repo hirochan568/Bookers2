@@ -1,5 +1,5 @@
 
-	<div class="profile-container"><h2>User info</h2>
+	<h2>User info</h2>
    <%= attachment_image_tag user, :profile_image, :size, 100, 100, fallback: "no_image.jpg" ,format: 'no_image.jpg' %>
     <table class="table">
       </tbody>
@@ -13,12 +13,7 @@
         </tr>
       </tbody>
     </table>
-  </div>
-  <div class="row">
-		<% if user.id == current_user.id %>
     <p><%= link_to"",edit_user_path(user.id),  class: "btn btn-outline-dark btn-lg btn-block fas fa-user-cog" %></p>
-    <% end %>
-  </div>
 
 
   	<h2>New book</h2>

@@ -1,14 +1,17 @@
     <%= flash[:notice] %>
+    <% if @book.errors.any? %>
+    <%= @book.errors.count %>error prohibited this obj from being saved:
     <% @book.errors.full_messages.each do |message| %>
-    <li><%= message %></li>
-    <% end %>
+     <li><%= message %></li>
+     <% end %>
+     <% end %>
 
 <div class="container">
 	<div class="row">
     <div class="col-md-3">
       <%= render 'layouts/list',user: @user,book: @newbook %>
     </div>
-    <div class= "col-xs-9">
+    <div class="col-md-8 offset-md-1">
       <h2>Book detail</h2>
       <table >
         <tr>
@@ -27,4 +30,5 @@
         </tr>
       </table>
     </div>
+  </div>
 </div>

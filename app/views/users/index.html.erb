@@ -1,11 +1,17 @@
-<% if flash[:notice] %>
-	<p><%= flash[:notice] %></p>
-<% end %>
-<div class="container px-5 px-sm-0">
+
+	    <%= flash[:notice] %>
+    <% if @book.errors.any? %>
+    <%= @book.errors.count %>error prohibited this obj from being saved:
+    <% @book.errors.full_messages.each do |message| %>
+     <li><%= message %></li>
+     <% end %>
+     <% end %>
+<div class="container">
   <div class="row">
     <div class="col-md-3">
       <%= render 'layouts/list', user: @user, book: @book %>
-      <div class= "col-md-8 col-xs-9 offset-md-1">
+    </div>
+      <div class= "col-md-8 offset-md-1">
         <h2>Users</h2>
         <table class="table">
           <thead>
@@ -24,6 +30,6 @@
           <% end %>
         </table>
       </div>
-    </div>
+
   </div>
 </div>
